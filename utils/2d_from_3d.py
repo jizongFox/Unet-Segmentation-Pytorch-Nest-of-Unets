@@ -1,10 +1,7 @@
+import SimpleITK as sitk  # reading MR images
 import cv2
-import scipy.misc
-
-import SimpleITK as sitk #reading MR images
-
 import glob
-
+import scipy.misc
 
 readfolderT = glob.glob('/home/bat161/Desktop/Thesis/EADC_HHP/*_MNI.nii.gz')
 readfolderL = glob.glob('/home/bat161/Desktop/Thesis/EADC_HHP/*_HHP_EADC.nii.gz')

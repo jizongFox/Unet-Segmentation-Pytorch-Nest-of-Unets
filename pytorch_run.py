@@ -1,37 +1,39 @@
 from __future__ import print_function, division
-import os
-import numpy as np
-from PIL import Image
-import glob
-#import SimpleITK as sitk
-from torch import optim
-import torch.utils.data
-import torch
-import torch.nn.functional as F
 
-import torch.nn
-import torchvision
+import glob
 import matplotlib.pyplot as plt
 import natsort
-from torch.utils.data.sampler import SubsetRandomSampler
-from Data_Loader import Images_Dataset, Images_Dataset_folder
-import torchsummary
-#from torch.utils.tensorboard import SummaryWriter
-#from tensorboardX import SummaryWriter
-
-import shutil
+import numpy as np
+import os
 import random
-from Models import Unet_dict, NestedUNet, U_Net, R2U_Net, AttU_Net, R2AttU_Net
-from losses import calc_loss, dice_loss, threshold_predictions_v,threshold_predictions_p
-from ploting import plot_kernels, LayerActivations, input_images, plot_grad_flow
-from Metrics import dice_coeff, accuracy_score
+import shutil
 import time
-#from ploting import VisdomLinePlotter
-#from visdom import Visdom
+import torch
+import torch.nn
+import torch.nn.functional as F
+import torch.utils.data
+import torchsummary
+import torchvision
+from PIL import Image
+from data.Data_Loader import Images_Dataset, Images_Dataset_folder
+from metrics.Metrics import dice_coeff, accuracy_score
+# import SimpleITK as sitk
+from torch import optim
+from torch.utils.data.sampler import SubsetRandomSampler
+
+from losses import calc_loss, dice_loss, threshold_predictions_v, threshold_predictions_p
+from networks.Models import Unet_dict, NestedUNet, U_Net, R2U_Net, AttU_Net, R2AttU_Net
+from utils.ploting import plot_kernels, LayerActivations, input_images, plot_grad_flow
+
+# from torch.utils.tensorboard import SummaryWriter
+# from tensorboardX import SummaryWriter
+
+# from ploting import VisdomLinePlotter
+# from visdom import Visdom
 
 
 #######################################################
-#Checking if GPU is used
+# Checking if GPU is used
 #######################################################
 
 train_on_gpu = torch.cuda.is_available()

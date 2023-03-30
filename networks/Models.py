@@ -1,8 +1,9 @@
 from __future__ import print_function, division
+
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.utils.data
-import torch
 
 
 class conv_block(nn.Module):

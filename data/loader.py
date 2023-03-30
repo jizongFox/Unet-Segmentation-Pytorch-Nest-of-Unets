@@ -1,13 +1,14 @@
 from __future__ import print_function, division
+
+import numpy as np
 import os
-from PIL import Image
+import random
 import torch
 import torch.utils.data
 import torchvision
+from PIL import Image
 from skimage import io
 from torch.utils.data import Dataset
-import random
-import numpy as np
 
 
 class Images_Dataset(Dataset):
